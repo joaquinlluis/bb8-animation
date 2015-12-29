@@ -1,0 +1,189 @@
+// STYLES
+
+@import "css/misc.sass"
+@import "css/mixins.sass"
+
+
+body
+  display: flex
+  overflow: hidden
+
+.container.leftmove
+  transform: translateX(-100%)
+  transition: all 1s ease
+
+  .bb8 .body
+    +animation(leftbody 0.6s)
+    +animation-attr
+    transform-origin: center
+  .bb8 .head
+    +animation(lefthead 1s)
+    +animation-attr
+    transform-origin: center 156%
+
++keyframes(leftbody)
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(-360deg)
+
++keyframes(lefthead)
+  0%
+    transform: rotate(0deg)
+  10%
+    transform: rotate(-40deg)
+  30%
+    transform: rotate(0deg)
+  40%
+    transform: rotate(10deg)
+  100%
+    transform: rotate(0deg)
+
+
+.container.rightmove
+  transform: translateX(100%)
+  transition: all 1s ease
+
+  .bb8 .body
+    +animation(rightbody 0.6s)
+    +animation-attr
+    transform-origin: center
+  .bb8 .head
+    +animation(righthead 1.5s)
+    +animation-attr
+    transform-origin: center 156%
+
+
++keyframes(rightbody)
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)
+
++keyframes(righthead)
+  0%
+    transform: rotate(0deg)
+  10%
+    transform: rotate(40deg)
+  30%
+    transform: rotate(0deg)
+  40%
+    transform: rotate(-10deg)
+  100%
+    transform: rotate(0deg)
+
+.eye
+  +animation(eye 2s infinite)
+  +animation-attr
+  transform-origin: center
++keyframes(eye)
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.5)
+  60%
+    transform: scale(1.7)
+  80%
+    transform: scale(1)
+  100%
+    transform: scale(1)
+
+.led
+  +animation(led 2s infinite)
+  +animation-attr
+  transform-origin: center
++keyframes(led)
+  0%
+    fill: #5D5D5D
+    transform: scale(1)
+  50%
+    fill: #FB5D5D
+    transform: scale(1.5)
+  60%
+    fill: #FB5D5D
+    transform: scale(1.7)
+  80%
+    fill: #5D5D5D
+    transform: scale(1)
+  100%
+    fill: #5D5D5D
+    transform: scale(1)
+
+.container
+  width: 100%
+  max-width: 210px
+  margin: auto
+  align-self: flex-end
+  z-index: 1
+  position: relative
+  transition: all 1s ease
+  transform: translateX(-100%)
+
+.sky, .floor
+  position: absolute
+  width: 100%
+  height: 40%
+  left: 0
+  top: 0
+  background: lightblue
+.floor
+  top: inherit
+  bottom: 0
+  height: 60%
+  background: #f9ce95
+
+.buttons
+  position: absolute
+  z-index: 9
+  top: 30px
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+  max-width: 804px
+  height: 604px
+  //border: 1px solid #fff
+
+.left, .right
+  position: absolute
+  width: 30px
+  height: 30px
+  border-radius: 30px
+  background: rgba(0,0,0,0.1)
+  top: 50%
+  left: 5%
+  transform: translateY(-50%) scale(1)
+  cursor: pointer
+  transition: all 0.5s ease
+  &:before
+    content: ''
+    position: absolute
+    width: 10px
+    height: 10px
+    transform: rotate(45deg)
+    border-left: 2px solid #F9CE95
+    border-bottom: 2px solid #F9CE95
+    top: 10px
+    left: 11px
+  &:hover
+    transform: translateY(-50%) scale(1.2)
+    transition: all 0.5s ease
+
+.right
+  left: initial
+  right: 5%
+  &:before
+    border-left: none
+    border-bottom: none
+    border-right: 2px solid #F9CE95
+    border-top: 2px solid #F9CE95
+    top: 10px
+    left: 9px
+
+
+
+
+
+
+
+

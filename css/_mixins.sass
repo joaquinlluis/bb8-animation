@@ -1,0 +1,29 @@
+// MIXINS
+=animation-attr
+  -webkit-animation-timing-function: linear
+  animation-timing-function: linear
+  -webkit-animation-fill-mode: forwards
+  -moz-animation-fill-mode: forwards
+  -o-animation-fill-mode: forwards
+  -ms-animation-fill-mode: forwards
+  animation-fill-mode: forwards
+  transform-origin: center
+
+=keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+  @-moz-keyframes #{$animation-name}
+    @content
+  @-ms-keyframes #{$animation-name}
+    @content
+  @-o-keyframes #{$animation-name}
+    @content
+  @keyframes #{$animation-name}
+    @content
+
+=animation($str)
+  -webkit-animation: #{$str}
+  -moz-animation: #{$str}
+  -ms-animation: #{$str}
+  -o-animation: #{$str}
+  animation: #{$str}
